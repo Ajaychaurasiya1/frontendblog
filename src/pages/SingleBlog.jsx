@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { StoreContext } from "../context/StoreContext";
-
+import API_BASE_URL from "../config/api";
 
 const SingleBlog = () => {
 
@@ -18,7 +18,7 @@ const SingleBlog = () => {
     <div className="rounded-md border border-gray-200 p-5 max-w-3xl flex flex-col gap-3 items-center justify-center mx-auto py-8">
       <img
         className="transition-transform duration-300 hover:scale-105"
-        src={`VITE_API_URL/images/${blog.image}`}
+        src={`${API_BASE_URL}/images/${blog.image}`}
         alt=""
       />
       <p className="text-2xl font-bold">{blog.title}</p>
@@ -28,7 +28,7 @@ const SingleBlog = () => {
         <p className="text-lg font-bold">Author:{blog.author.name}</p>
         <img
           className="w-8 h-8 rounded-full"
-          src={`VITE_API_URL/images/${blog.author.image}`}
+          src={`${API_BASE_URL}/images/${blog.author.image}`}
           alt=""
         />
       </div>
